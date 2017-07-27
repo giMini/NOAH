@@ -1,3 +1,6 @@
+[BlackHat Arsenal 2017](https://img.shields.io/badge/BlackHat-Arsenal%202017-yellow.svg?style=flat)
+![License](https://img.shields.io/badge/License-BSD%203-red.svg?style=flat) ![PowerShell](https://img.shields.io/badge/Language-PowerShell-blue.svg?style=flat) ![Twitter](https://img.shields.io/badge/twitter-@pabraeken-blue.svg?style=flat)
+
 # NOAH
 
 NOAH is  an agentless open source Incident Response framework based on PowerShell, called "No Agent Hunting" (NOAH), to help security investigation responders to gather a vast number of key artifacts without installing any agent on the endpoints saving precious time.
