@@ -26,7 +26,8 @@ Clone the repository or download the files from the project on a Windows compute
 4) Create the following files for the database access:
 * secureKeyDatabase.key
 * autoPasswordDatabase.txt
-You can use the following PowerShell script to:
+
+You can use the following PowerShell script to create the files:
 
 ```
 $KeyFile = "C:\temp\PoshPortal\Keys\secureKey.key"
