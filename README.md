@@ -64,7 +64,7 @@ This project is licensed under the BSD 3-clause License - see the [LICENSE](LICE
 ## Acknowledgments
 
 * Adam Podgorski, co-presenter at BlackHat Arsenal USA 2017
-* Mark Russinovitch
+* Mark Russinovich
 * Eric Zimmerman
 * Nir Sofer
 * Shay Levy
