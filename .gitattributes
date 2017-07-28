@@ -1,0 +1,4 @@
+bootstrap/* linguist-vendored
+build/* linguist-vendored
+dist/* linguist-vendored
+plugins/* linguist-vendored
