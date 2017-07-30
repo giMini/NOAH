@@ -52,6 +52,33 @@ $user = "POWNED\Administrator"
 $passwordFile = "C:\temp\PoshPortal\Keys\autoPassword.txt"
 $keyFile = "C:\temp\PoshPortal\Keys\secureKey.key"
 
+## Installing the FrontEnd
+
+Modify the connection.php file with your user/password and the name of your database:
+
+```
+<?php 
+$serverName = "SQL01\SQLEXPRESS"; //serverName\instanceName
+$connectionInfo = array("Database"=>"NOAH","UID" => "Administrator","PWD" => "P@ssword3!",);
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
+
+if( $conn ) {    
+}else{
+     echo "La connexion n'a pu être établie.<br />";
+     die(); // print_r( sqlsrv_errors(), true));
+```
+
+## Start to Hunt
+
+To be able to hunt your endpoints, you need to use the backend with credentials that are allowed to connect and to retrieve artifacts on the endpoints. 
+
+At the moment, you can only hunt for "All" artifacts from the web interface. If you want to choose what to hunt, do it from the Backend (PowerShell script).
+
+### EXAMPLE: Hunting from the BackEnd
+
+````
+.\NOAH.ps1 -Processor -Memory -InstalledPrograms -Netstat -AMCache -Prefetch -EnableHash -HuntDescription "This is a test"
+```
 
 ## Author
 
