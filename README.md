@@ -76,7 +76,7 @@ At the moment, you can only hunt for "All" artifacts from the web interface. If 
 
 ### EXAMPLE: Hunting from the BackEnd
 
-````
+```
 .\NOAH.ps1 -Processor -Memory -InstalledPrograms -Netstat -AMCache -Prefetch -EnableHash -HuntDescription "This is a test"
 ```
 
