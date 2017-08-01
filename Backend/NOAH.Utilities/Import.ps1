@@ -16,9 +16,9 @@ Function Read-OpenFileDialog([string]$InitialDirectory, [switch]$AllowMultiSelec
 # Function Name 'ListFile' - get server based on a CSV file
 # ________________________________________________________________________
 Function ListFile {	
-    #$fileOpen = Read-OpenFileDialog 
-    #if($fileOpen -ne '') {	
-		$colComputers = Import-Csv "C:\temp\PoshPortal\NOAH\servers.csv" #$fileOpen
-    #}
+    $fileOpen = Read-OpenFileDialog 
+    if($fileOpen -ne '') {	
+		$colComputers = Import-Csv $fileOpen
+    }
     $colComputers
 }
