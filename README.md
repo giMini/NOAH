@@ -30,7 +30,7 @@ Clone the repository or download the files from the project on a Windows compute
 You can use the following PowerShell script to create the files:
 
 ```
-$KeyFile = "C:\temp\PoshPortal\Keys\secureKey.key"
+$KeyFile = "C:\temp\PoshPortal\Keys\secureKeyDatabase.key"
 $Key = New-Object Byte[] 32   # AES encryption only supports 128-bit (16 bytes), 192-bit (24 bytes) or 256-bit key (32 bytes) 
 [Security.Cryptography.RNGCryptoServiceProvider]::Create().GetBytes($Key)
 $Key | out-file $KeyFile
@@ -45,6 +45,25 @@ $Password | ConvertFrom-SecureString -key $Key | Out-File $PasswordFile
 ## Installing the BackEnd
 
 Copy the "BackEnd" folder on the Windows computer that has Windows PowerShell v4 installed.
+
+Create the following files for the database access:
+* secureKey.key
+* autoPassword.txt
+
+You can use the following PowerShell script to create the files:
+
+```
+$KeyFile = "C:\temp\PoshPortal\Keys\secureKey.key"
+$Key = New-Object Byte[] 32   # AES encryption only supports 128-bit (16 bytes), 192-bit (24 bytes) or 256-bit key (32 bytes) 
+[Security.Cryptography.RNGCryptoServiceProvider]::Create().GetBytes($Key)
+$Key | out-file $KeyFile
+
+$PasswordFile = "C:\temp\PoshPortal\Keys\autoPassword.txt"
+$KeyFile = "C:\temp\PoshPortal\Keys\secureKey.key"
+$Key = Get-Content $KeyFile
+$Password = "Spring2018" | ConvertTo-SecureString -AsPlainText -Force
+$Password | ConvertFrom-SecureString -key $Key | Out-File $PasswordFile
+```
 
 Configure the following variable at lines 198 and 354. You can use the same script than above:
 $UserName = 'Powned\Administrator'
