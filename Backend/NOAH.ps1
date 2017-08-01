@@ -60,6 +60,9 @@
 .NOTES
     Version:        0.1
     Author:         Pierre-Alexandre Braeken
+
+.LICENCE
+    BSD-3         
   
 .EXAMPLE
     .\NOAH-Backend.ps1
