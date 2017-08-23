@@ -9,7 +9,57 @@ NOAH is  an agentless open source Incident Response framework based on PowerShel
 
 Clone the repository or download the files from the project on a Windows computer.
 
-### Prerequisites
+### Automagic installation
+
+1) Create a folder c:\Install
+ 
+2) Move the scripts inside "Setup" folder to c:\Install
+ 
+3) Run in this order : AS ADMISTRATOR (in ISE or a Powershell Console)
+
+```
+1_Download-Src.ps1
+```
+```    
+2_Install-Modules.ps1
+```    
+```    
+3-Install-SQL.ps1
+```    
+! Wait until SMS is completly installed !
+ 
+## Now you can Reboot you computer
+
+```    
+6-Install_IISPHP.ps1
+```    
+```     
+7-Deploy-NOAH.ps1
+```    
+
+You should be able to run the NOAH frontend from this URL: http://localhost/index.php
+ 
+## Enjoy with your first Hunt
+
+1) Create a CSV file with a text editor in C:\Backend\. Enter data as below:
+
+
+ ServerName
+ server1
+ server2
+ server3
+ 
+2) In the C:\Backend\NOAH.ps1 script, replace the "POWNED user" with the one you created.
+
+3) Run NOAH :
+
+ ```
+ cd C:\Backend
+ .\NOAH.ps1 -Processor -Memory -InstalledPrograms -Netstat -AMCache -Prefetch -EnableHash -HuntDescription "This is a test"
+```
+
+### Manual installation
+## Prerequisites
 
 1) Windows computer with PowerShell installed
 2) MSSQL express edition (https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
