@@ -28,7 +28,7 @@ Clone the repository or download the files from the project on a Windows compute
 ```    
 ! Wait until SMS is completly installed !
  
-## Now you can Reboot you computer
+### Now you can Reboot you computer
 
 ```    
 6-Install_IISPHP.ps1
@@ -39,7 +39,7 @@ Clone the repository or download the files from the project on a Windows compute
 
 You should be able to run the NOAH frontend from this URL: http://localhost/index.php
  
-## Enjoy with your first Hunt
+### Enjoy with your first Hunt
 
 1) Create a CSV file with a text editor in C:\Backend\. Enter data as below:
 
@@ -58,14 +58,14 @@ You should be able to run the NOAH frontend from this URL: http://localhost/inde
  .\NOAH.ps1 -Processor -Memory -InstalledPrograms -Netstat -AMCache -Prefetch -EnableHash -HuntDescription "This is a test"
 ```
 
-### Manual installation
-## Prerequisites
+## Manual installation
+### Prerequisites
 
 1) Windows computer with PowerShell installed
 2) MSSQL express edition (https://www.microsoft.com/en-us/sql-server/sql-server-editions-express)
 3) WAMP  (http://www.wampserver.com/en/), or LAMP if you want to install the web interface of NOAH on a Linux machine
 
-## Installing the Database
+### Installing the Database
 
 1) On the Windows computer, install MSSQL
 2) Run the Database generation scripts:
@@ -92,7 +92,7 @@ $Password = "Spring2018" | ConvertTo-SecureString -AsPlainText -Force
 $Password | ConvertFrom-SecureString -key $Key | Out-File $PasswordFile
 ```
 
-## Installing the BackEnd
+### Installing the BackEnd
 
 Copy the "BackEnd" folder on the Windows computer that has Windows PowerShell v4 installed.
 
@@ -121,7 +121,7 @@ $user = "POWNED\Administrator"
 $passwordFile = "C:\temp\PoshPortal\Keys\autoPassword.txt"
 $keyFile = "C:\temp\PoshPortal\Keys\secureKey.key"
 
-## Installing the FrontEnd
+### Installing the FrontEnd
 
 Modify the connection.php file with your user/password and the name of your database:
 
@@ -137,7 +137,7 @@ if( $conn ) {
      die(); // print_r( sqlsrv_errors(), true));
 ```
 
-## Start to Hunt
+### Start to Hunt
 
 To be able to hunt your endpoints, you need to use the backend with credentials that are allowed to connect and to retrieve artifacts on the endpoints. 
 
