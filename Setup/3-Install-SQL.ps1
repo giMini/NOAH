@@ -52,7 +52,7 @@
     Write-Output "SQL - WAIT until install is completed - Press Enter if it's ok"
     Pause
 
-    Write-Output "Update env:Path
+    Write-Output "Update env:Path"
     $env:Path += ";C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn"
     SQLCMD.EXE /? | select-object -first 2
     Pause
