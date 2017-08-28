@@ -43,11 +43,12 @@ You should be able to run the NOAH frontend from this URL: http://localhost/inde
 
 1) Create a CSV file with a text editor in C:\Backend\. Enter data as below:
 
-
+``` 
  ServerName
  server1
  server2
  server3
+``` 
  
 2) In the C:\Backend\NOAH.ps1 script, replace the "POWNED user" with the one you created.
 
