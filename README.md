@@ -3,7 +3,7 @@
 
 # NOAH
 
-NOAH is  an agentless open source Incident Response framework based on PowerShell, called "No Agent Hunting" (NOAH), to help security investigation responders to gather a vast number of key artifacts without installing any agent on the endpoints saving precious time.
+NOAH, which was created by Pierre-Alexandre Braeken, is an agentless open source Incident Response framework based on PowerShell, called "No Agent Hunting" (NOAH), to help security investigation responders to gather a vast number of key artifacts without installing any agent on the endpoints saving precious time.
 
 ## Getting Started
 
