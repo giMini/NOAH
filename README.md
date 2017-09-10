@@ -7,9 +7,19 @@ NOAH is an agentless open source Incident Response framework based on PowerShell
 
 ## Getting Started
 
-Clone the repository or download the files from the project on a Windows computer.
+### Docker
+
+1) Install the NOAH database : docker pull arnaudlandry/noahdb:version1
+2) Install the NOAH Frontend : docker pull arnaudlandry/noahfront:version1
+3) docker run -dit -h noahdb --name noahdb -p 1433:1433 -e sa_password="5c4_fdc6a50+1864b89d8a6576bd9dbb-90" -e ACCEPT_EULA=Y arnaudlandry/noahdb
+4) docker run -dit -h noahfront --name noahfront -p 8000:8000 arnaudlandry/noahfront
+
+Note: if you change SA password, you'll have to change the connection.php script
+Note2: the backend is not yet implemented
 
 ### Automagic installation
+
+Clone the repository or download the files from the project on a Windows computer.
 
 1) Create a folder c:\Install
  
