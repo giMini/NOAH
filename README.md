@@ -178,3 +178,4 @@ This project is licensed under the BSD 3-clause License - see the [LICENSE](LICE
 * CookieMonster
 * David Howell
 * Boe Prox
+* Arnaud Landry (Dockerization and automagic installation)
