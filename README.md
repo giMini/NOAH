@@ -9,13 +9,31 @@ NOAH is an agentless open source Incident Response framework based on PowerShell
 
 ### Docker
 
-1) Install the NOAH database : docker pull arnaudlandry/noahdb:version1
-2) Install the NOAH Frontend : docker pull arnaudlandry/noahfront:version1
-3) docker run -dit -h noahdb --name noahdb -p 1433:1433 -e sa_password="5c4_fdc6a50+1864b89d8a6576bd9dbb-90" -e ACCEPT_EULA=Y arnaudlandry/noahdb
-4) docker run -dit -h noahfront --name noahfront -p 8000:8000 arnaudlandry/noahfront
+1) __Download__ noah's images from Docker Hub: 
 
-Note: if you change SA password, you'll have to change the connection.php script
-Note2: the backend is not yet implemented
+    `docker pull arnaudlandry/noahdb:version1`
+
+    `docker pull arnaudlandry/noahfront:version1`
+
+2) __Run__ your noah's containers:
+
+    `docker run -dit -h noahdb --name noahdb -p 1433:1433 -e sa_password="5c4_fdc6a50+1864b89d8a6576bd9dbb-90" -e ACCEPT_EULA=Y arnaudlandry/noahdb:version1`
+
+    `docker run -dit -h noahfront --name noahfront -p 8000:8000 arnaudlandry/noahfront:version1`
+
+
+3) __Check__ your containers: status=UP (optional)
+
+    `docker ps -a`
+ 
+3) __Connect__ to a container: noahfront (optional)
+
+    `docker exec -ti noahfront powershell`
+  
+__Note1__: if you change "sa_password", you'll have to change the connection.php script in noahfront: "vim C:\inetpub\wwwroot\noah\connection.php"
+
+__Note2__: the backend is not yet implemented (aka NOAH.ps1) , you'll have to run it on your Docker Host , look at "Installing the BackEnd"
+
 
 ### Automagic installation
 
