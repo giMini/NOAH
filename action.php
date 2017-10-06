@@ -718,13 +718,27 @@ if (isset($_POST['useraccess'])) {
 	echo $objectReturn;
 }
 
-if(isset($_POST["launch"])) {	
-  // Path to the PowerShell script. Remember double backslashes:
-	$psScriptPath = "C:\\wamp\\www\NOAH\\Backend\\NOAH.ps1";
- 
-	// Execute the PowerShell script, passing the parameters:
-	$query = shell_exec("powershell -command $psScriptPath -All -HuntDescription 'Hello BlackHat!' < NUL");
-	echo $query; 
+if(isset($_POST["launch"])) {
+	$launch = htmlentities(trim(htmlspecialchars(addslashes($_POST['launch']))));			
+	$huntchoices = htmlentities(trim(htmlspecialchars(addslashes($_POST['huntchoices']))));
+	if(empty($huntchoices)) {	
+		echo("You didn't select any options.");
+	}
+	else {
+		if(empty($launch)){
+			$launch = "No description";
+		}
+		$choices = explode(",", $huntchoices);
+		$param ="";
+		foreach ($choices as $choice) {
+			$param .= "-".$choice." ";
+		}
+	  // Path to the PowerShell script. Remember double backslashes:
+		$psScriptPath = "C:\\wamp\\www\NOAH\\Backend\\NOAH.ps1";
+		echo "<tr><td>Hunt <b>'".$launch."'</b> started with options: $param </td></tr>";
+		// Execute the PowerShell script, passing the parameters:
+		$query = shell_exec("powershell -command $psScriptPath $param -HuntDescription '$launch' < NUL");		
+	}
  }	
 
 if (isset($_POST['amcache'])) {	
