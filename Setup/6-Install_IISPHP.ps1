@@ -24,11 +24,11 @@ configuration IISPHP
         # Target nodes to apply the configuration 
             [string]$NodeName = 'localhost', 
         # Name of the website to create 
-            [Parameter(Mandatory)] 
+            [Parameter(Mandatory = $true)]  
             [ValidateNotNullOrEmpty()] 
             [String]$WebSiteName,  
         # Destination path for Website content 
-            [Parameter(Mandatory)] 
+            [Parameter(Mandatory = $true)] 
             [ValidateNotNullOrEmpty()] 
             [String]$WebsitePath,
         # Package Folder
